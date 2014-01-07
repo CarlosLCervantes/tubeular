@@ -1,0 +1,86 @@
+// Navbar
+// -------------------------
+
+// Basics of a navbar
+$navbar-height:                    50px !default;
+// $navbar-margin-bottom:             $line-height-computed !default;
+// $navbar-border-radius:             $border-radius-base !default;
+// $navbar-padding-horizontal:        floor($grid-gutter-width / 2) !default;
+// $navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !default;
+
+$navbar-default-color:             #777 !default;
+$navbar-default-bg:                $dark-grey;
+$navbar-default-border:            darken($navbar-default-bg, 6.5%) !default;
+
+// Navbar links
+$navbar-default-link-color:                #FFF;
+$navbar-default-link-hover-color:          #333 !default;
+$navbar-default-link-hover-bg:             $dark-grey;
+$navbar-default-link-active-color:         #555 !default;
+$navbar-default-link-active-bg:            darken($navbar-default-bg, 6.5%) !default;
+$navbar-default-link-disabled-color:       #ccc !default;
+$navbar-default-link-disabled-bg:          transparent !default;
+
+// Navbar brand label
+$navbar-default-brand-color:               $navbar-default-link-color !default;
+$navbar-default-brand-hover-color:         darken($navbar-default-brand-color, 10%) !default;
+$navbar-default-brand-hover-bg:            transparent !default;
+
+// Navbar toggle
+// $navbar-default-toggle-hover-bg:           #ddd !default;
+// $navbar-default-toggle-icon-bar-bg:        #ccc !default;
+// $navbar-default-toggle-border-color:       #ddd !default;
+
+$grid-float-breakpoint: 970px;
+
+//
+//$navbarBackground: $dark-grey;
+//$navbarBackgroundHighlight: $dark-grey;
+// $navbarText: #FFF;
+// $navbarLinkBackgroundHover: #000;
+// $navbarLinkColor: #FFF;
+// $navbarLinkColorHover: #FFF;
+
+// Dropdowns
+// -------------------------
+$dropdown-bg:                    #000;
+$dropdown-border:                #fff;
+
+$dropdown-link-color:            #fff;
+$dropdown-link-hover-color:      #ff0000;
+$dropdown-link-hover-bg:         #000;
+
+// Other
+// -------------------------
+$headings-color: #FFFFFF;
+$text-color:   #FFFFFF;
+
+.btn-blue {
+	background-color: $real-blue !important;
+	background-image: none !important;
+  color: #fff !important;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.00);
+  -webkit-font-smoothing: antialiased;
+}
+
+
+.btn-red {
+	background-color: $red !important;
+	background-image: none !important;
+  color: #fff !important;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.00);
+  -webkit-font-smoothing: antialiased;
+}
+
+@import "twitter/bootstrap";
+
+
+//Hardcore Overrides
+a.close {
+  color: rgba(255,255,255,.9) !important;
+  //background-color: rgba(255,255,255,.9) !important;
+  opacity: 0.9 !important;
+}
+// .navbar-toggle {
+// 	background-color: rgba(255,255,255,.9)
+// }

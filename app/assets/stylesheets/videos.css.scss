@@ -1,0 +1,53 @@
+div.video-list-filters p {
+	text-align: right;
+	line-height: 60px;
+	
+	font-size: 1.1em;
+}
+
+div.video-list-row {
+	//margin-bottom: 15px;
+}
+
+div.video-list-item-container {
+	padding: 3px;
+}
+
+div.video-list-item {
+	padding: 10px;
+	border-radius: 4px;
+	background-color: $red;
+	margin: 0px 5px 15px 5px;
+	max-width: 320px;
+	.preview {
+		margin: 0px auto;
+		display: block;
+		background-color: #000;
+		border-radius: 4px;
+		//width: auto;
+		//min-width: 200px;
+		height: 200px;
+		width: 100%;
+		border: 1px solid white;
+	}
+	.title {
+
+	}
+	div.info-row {
+		margin-bottom: 5px;
+		div:last-child {
+			text-align: right;
+		}
+	}
+
+	div.ratings-container {
+		padding-right: 13px;
+	}
+	div.ratings {
+		float: right;
+		// margin-right: -5px;
+		.icon-star-filled {
+			color: yellow;
+		}
+	}
+}

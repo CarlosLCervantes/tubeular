@@ -1,0 +1,32 @@
+<div class="content-header row-fluid">
+  <div class="span6">
+    <h2><%= "#{@list_label} Videos" %></h2>
+  </div>
+  <div class="span6 video-list-filters">
+    <p>Filter: 
+      <%= link_to best_rated_videos_path do %>
+        <i class="icon-star"></i> Rating
+      <% end %> |
+      <%= link_to most_viewed_videos_path do %>
+        <i class="icon-eye-open"></i> Viewed
+      <% end %> | 
+      <%= link_to most_favorited_videos_path do %>
+        <i class="icon-heart"></i> Favorites
+      <% end %>
+    </p>
+  </div> 
+</div>
+
+<%= render "videos/video_list" %>
+
+<!-- <div id="video-list">
+  <%# @videos.in_groups_of(4, false).each do |group| %>
+    <div class="video-list-row row-fluid">
+      <%# group.each do |video| %>
+        <%#= render video %>
+      <%# end %>
+    </div>
+<%# end %> -->
+<!--  <strong><%= @videos.length %></strong> -->
+  <%= paginate @videos %>
+</div>

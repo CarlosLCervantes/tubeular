@@ -1,0 +1,38 @@
+<div class='col-md-10 col-md-offset-1'>
+	<h2>SIGN IN FOR FULL ACCESS</h2>
+	<div id='login-box' class='row'>
+		<div id='left' class='col-sm-6 col-xs-12'>
+			<h3>Sign in to your Account</h3>
+			<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+			  <div>
+			  	<%= f.label :email %>
+			  	<%= f.email_field :email, :autofocus => true %>
+			  </div>
+
+			  <div><%= f.label :password %>
+			  <%= f.password_field :password %></div>
+
+			  <% if devise_mapping.rememberable? %>
+			    <div>
+			    	<%= f.check_box :remember_me %>
+			    	<%= f.label :remember_me %>
+			   	</div>
+			  <% end %>
+			  <br /><br /><br />
+			  <div><%= f.submit "SIGN IN", :id => "btnSignIn", :class => "btn btn-red"  %></div>
+			<% end %>
+		</div>
+		<div class='col-sm-6 col-xs-12'>
+			<h3>Not a Member? You should be!</h3>
+			<ul>
+				<li>Unlimited Access to Content</li>
+				<li>Save Your Favorite Videos</li>
+				<li>Download Videos</li>
+				<li>And More...</li>
+			</ul>
+			<%= link_to "REGISTER", new_user_registration_path, :id => "btnGoToRegister", :class => "btn btn-blue" %>
+		</div>
+	</div>
+</div>
+
+<%#= render "users/shared/links" %>

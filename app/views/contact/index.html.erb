@@ -1,0 +1,6 @@
+<h1>Contact Us</h1>
+<%= form_tag("/contact", method: "post") do %>
+  <%= text_area_tag "comment", "", :style => "min-width: 320px; max-width: 800px; height: 100px;", :placeholder => "Enter Your Comment Here" %>
+  <br />
+  <%= submit_tag "Submit", :class => "btn btn-primary" %>
+<% end %>

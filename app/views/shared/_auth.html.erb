@@ -1,0 +1,23 @@
+<div id="auth-section" class="row">
+	<% if user_signed_in? %>
+    <ul id="user-options">
+  		<li class="dropdown pull-right">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <i class="icon-user"></i> Welcome, <%= current_user.username %>
+          <span class="glyphicon glyphicon-chevron-down"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><%= link_to "My Account", main_app.settings_path %></li>
+          <li class="divider"></li>
+          <li><%= link_to "Favorites", main_app.favorites_path %></li>
+          <li class="divider"></li>
+          <li><%= link_to 'Logout', main_app.destroy_user_session_path, :class => 'nav-last', :onclick => "logout('header')"%></li>
+        </ul>
+      </li>
+      <ul>
+	<% else %>
+		<%= link_to "Login", main_app.new_user_session_path, :class => "btn btn-blue" %> 
+		<%= link_to "Register", main_app.new_user_registration_path, :class => "btn btn-red" %>
+	<% end %>
+	<%#= link_to "Test", new_user_session_path, :class => "btn btn-red" %> 
+</div>

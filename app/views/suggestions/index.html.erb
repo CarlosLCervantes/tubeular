@@ -1,0 +1,27 @@
+<h1>Suggestion Box</h1>
+<% if current_user %>
+<p>Feel free to suggest something for us to add.</p>
+<%= form_tag("/suggestions", method: "post") do %>
+  <%= text_area_tag "comment", "", :style => "min-width: 320px; max-width: 800px; height: 100px;", :placeholder => "Enter Your Suggestion Here" %>
+  <br />
+  <%= submit_tag "Submit", :class => "btn btn-primary" %>
+<% end %>
+<% else %>
+  <h5>Please login to suggest a enhancement</h5>
+<% end %>
+<br /><br />
+<p>The following are enhancements are under consideration for being added to the site</p>
+<% @suggestions.each do |s| %>
+  <div class='suggestion'>
+    <strong><%= s.title %></strong>
+    <p><%= s.description %></p>
+  </div>
+<% end %>
+<br /><br />
+<p>The following are enhancements have been added to the site.</p>
+<% @suggestions_done.each do |s| %>
+  <div class='suggestion'>
+    <strong><%= s.title %></strong>
+    <p><%= s.description %></p>
+  </div>
+<% end %>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Tubeular" %></title>
+    <meta name="keywords" content="Tubeular">
+    <meta name="description" content="Amazing videos">
+    <%= csrf_meta_tags %>
+    <%= render "shared/favicons" %>
+    <%#= javascript_include_tag "jwplayer" %>
+    <script src="http://jwpsrv.com/library/tooy8gIIEeO7lRIxOUCPzg.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Oswald|Varela+Round|Open+Sans|Arizonia' rel='stylesheet' type='text/css'>
+    <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"> -->
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+  </head>
+  <body>
+    <%= render "shared/ga" %>
+    <%= render "shared/nav" %>
+    
+    <div class="container">
+      <%= render "shared/auth" %>
+      <div id="main" class="">
+        <%#= render "shared/header" %>
+        <%#= bootstrap_flash %>
+        <%= render 'layouts/messages' %>
+        <%= yield %>
+      </div>
+      <br class="clear" />
+      <br class="clear" />
+      <%= render "shared/footer" %>
+    </div>
+    <script type="text/javascript">
+      var loggedIn = <%= current_user ? 'true' : 'false'  %>;
+    </script>
+    
+    <%= yield :footer_scripts %>
+  </body>
+</html>

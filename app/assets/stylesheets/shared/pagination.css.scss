@@ -1,0 +1,24 @@
+nav.pagination {
+	//text-align: center;
+	display: block;
+	margin: 0px auto;
+	float: right;
+	font-size: 16px;
+	//border: 1px solid red;
+	span {
+		margin-right: 5px;
+	}
+	span.next {
+		margin-left: 5px;
+	}
+	span.page {
+		border: 1px solid #333333;
+		border-radius: 5px;
+		text-align: center;
+		padding: 2px 2px 2px 7px;
+		
+	}
+	span.current {
+		color: $red;
+	}
+}

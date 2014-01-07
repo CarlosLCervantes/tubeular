@@ -1,0 +1,38 @@
+<div class="content-header row">
+	<div class="col-sm-6 col-xs-12">
+		<h2>Most Recent Videos</h2>
+	</div>
+	<div class="col-sm-6 col-xs-12 video-list-filters">
+		<p>Sort: 
+			<%= link_to best_rated_videos_path do %>
+				<span class="glyphicon glyphicon-star"></span> Rating
+			<% end %> |
+			<%= link_to most_viewed_videos_path do %>
+				<span class="glyphicon glyphicon-eye-open"></span> Viewed
+			<% end %> | 
+			<%= link_to most_favorited_videos_path do %>
+				<span class="glyphicon glyphicon-heart"></span>  Favorites
+			<% end %>
+		</p>
+	</div>
+</div>
+
+<%= render "videos/video_list" %>
+
+<br class="clear" />
+
+<div class="row">
+	<div class="col-xs-12">
+		<%= paginate @videos %>
+	</div>
+</div>
+
+<%#= render "ads/fullwidthset" %>
+
+<% unless mobile_device? %>
+	<%#= render "ads/" %>
+<% else %>
+	<%#= render "ads/" %>
+<% end %>
+
+

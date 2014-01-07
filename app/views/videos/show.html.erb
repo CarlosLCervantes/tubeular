@@ -1,0 +1,73 @@
+<%= content_for :title do %>
+	<%= "Tubeular | #{@video.name} Video" %>
+<% end %>
+
+<div id="video-main">
+	<div class="row">
+		<div class="video-show col-xs-12 col-sm-8">
+			<h1><%= @video.name %></h1>
+			<!-- <div class="video-player-wrapper"> -->
+				<% unless mobile_device? %>
+					<%#= render "ads/in_video_ad" %>
+				<% end %>
+				<div id="video_asd" class="video-player" data-uri='<%= @video.uri %>' data-uri-webm='<%= @video.uri_webm %>'>
+					Loading the player...</div>
+				<!-- <br class="clear" /> -->
+			<!-- </div> -->
+			<div class="info">
+				<div class="row">
+					<div class="col-xs-6">
+						<%= ratings(@video) %>
+					</div>
+					<div class="col-xs-6 text-right">
+						<%= @video.view_count %> <span class="glyphicon glyphicon-eye-open"></span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6">
+						<!--Tags:-->
+					</div>
+					<div class="col-xs-6 text-right">
+						<%= favorite_button(@video) %>
+						<%= unfavorite_button(@video) %>
+						<!-- <button class="btn btn-primary btn-favorite">Favorite <i class="icon-heart"></i></button> -->
+					</div>
+				</div>
+				<div id="comments">
+
+				</div>
+			</div>
+		</div>
+		<div id="main-ad-space" class="hidden-xs col-sm-4">
+			<div class="clicker-video-ad">
+				<%#= render "ads/" %>
+			</div>
+			<div class="clicker-video-ad">
+				<%#= render "ads/exoclick_300" %>
+			</div>
+		</div>
+	</div>
+</div>
+
+<% if mobile_device? %>
+	<br />
+	<%= render "ads/exoclick_mobile" %>
+<% end %>
+
+<%= content_for :footer_scripts do %>
+	<% unless mobile_device? %>
+		<%#= render "ads/popunder" %>
+	<% end %>
+<% end %>
+
+<div class="related-videos row">
+	<h1>Related Videos</h1>
+	<%= render "videos/video_list" %>
+</div>
+
+<div class="row">
+	<%= render "ads/fullwidthset" %>
+	<% if mobile_device? %>
+		<%#= render "ads/" %>
+	<% end %>
+</div>

@@ -1,0 +1,80 @@
+div#registration-box, div#login-box {
+	border-radius: 5px;
+	border: 2px solid $grey;
+	padding: 15px 30px;
+	position: relative;
+	div#left {
+		border-right: 2px solid $grey;
+		p {
+			text-align: center;
+		}
+	}
+	#btnRegister {
+		margin: 5px auto;
+	}
+	h3 {
+		text-align:center;
+		margin-bottom: 19px;
+	}
+	ul {
+		list-style-type: none;
+		font-size: 19px;
+		font-family: 'Oswald', 'Helvetica', 'Arial';
+		li {
+			margin-bottom: 15px;
+		}
+	}
+	.btn {
+		text-align: center;
+		margin: 0px auto;
+		display: block;
+		width: 200px;
+		padding: 10px;
+		bottom: 0;
+		font-size: 18px;
+	}
+	label {
+		display: inline-block;
+		min-width: 120px;
+	}
+	input[type="text"] {
+		display: inline-block;
+	}
+}
+
+div#registration-box {
+
+}
+
+div#login-box {
+	.btn-red {
+		width: 210px;
+	}
+}
+
+div#auth-section {
+	//border: 5px solid blue;
+	margin: 10px 0px 10px 0px;
+	text-align:right;
+	a {
+		display: inline-block;
+	}
+	a:first-child {
+		margin-right: 8px;
+	}
+
+}
+
+ul#user-options {
+	list-style-type: none;
+}
+
+@media (max-width: 480px) { //Phone only
+	div#registration-box, div#login-box {
+		div#left {
+			padding-bottom: 15px;
+			border-right: none;
+			border-bottom: 2px solid $grey;
+		}
+	}
+}

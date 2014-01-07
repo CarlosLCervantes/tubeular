@@ -1,0 +1,15 @@
+<% videos = @videos if (local_assigns[:social_buttons].nil? && @videos) %>
+<div id="video-list">
+	<% videos.each do |video| %>
+		<%= render video %>
+	<% end %>
+</div>
+
+<!-- <div id="video-list">
+	<%# @videos.in_groups_of(4, false).each do |group| %>
+  	<div class="video-list-row row">
+      <%# group.each do |video| %>
+        <%#= render video %>
+      <%# end %>
+    </div>
+<%# end %> -->

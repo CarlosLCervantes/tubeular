@@ -1,0 +1,23 @@
+div#video-main{
+	margin:auto;
+	display:block; 
+	//max-width: 920px;
+}
+div.video-show{
+	@include content-item;
+	padding: $standard-padding-unit;
+	div.video-player-wrapper {
+		display: block;
+		margin: 10px auto;
+		//border: 1px solid #fff; //Contrain video size?
+		object, video, div {
+			display: block;
+			margin: 10px auto;
+		}
+	}
+}
+
+div.related-videos {
+	//@include content-item;
+	//padding: $standard-padding-unit;
+}

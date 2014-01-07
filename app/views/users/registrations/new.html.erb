@@ -1,0 +1,54 @@
+<div class='col-md-10 col-md-offset-1'>
+	<h2>SIGN UP FOR FREE</h2>
+	<div id='registration-box' class='row'>
+		<div id='left' class='col-sm-6  col-xs-12'>
+			<h3>Register for Full Access</h3>
+			<%#= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+			<%= semantic_form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: {class: "form-vertical"}) do |f| %>
+			  <%= devise_error_messages! %>
+
+			  <div>
+			  	<%= f.label :email %>
+			  	<%= f.email_field :email, :autofocus => true %>
+			 	</div>
+
+			 	<div>
+			  	<%= f.label :username %>
+			  	<%= f.text_field :username %>
+			 	</div>
+
+			  <div>
+			 		<%= f.label :password %>
+			  	<%= f.password_field :password %>
+				</div>
+
+			 	<div>
+					<%= f.label :password_confirmation, "Password Again" %>
+					<%= f.password_field :password_confirmation %>
+				</div>
+
+			  <div style="margin-top: 15px;">
+			  	<%= f.submit "SIGN UP", :id => "btnRegister", :class => "btn btn-red" %>
+			  	<p>already a member?
+			  	<%= link_to "Sign In", new_user_session_path %></p>
+			  </div>
+			<% end %>
+		</div>
+		<div class='col-sm-6 col-xs-12'>
+			<h3>Why Sign Up?</h3>
+			<ul>
+				<li>Unlimited Access to Content</li>
+				<li>Save Your Favorite Videos</li>
+				<li>Download Videos</li>
+				<li>And More...</li>
+				<li>Exclusive Perks and Rewards</li>
+				<li>We’ll Love you Long Time</li>
+			</ul>
+			<!--<div>
+				<%#= link_to "REGISTER", new_user_registration_path, :id => "btnGoToRegister", :class => "btn btn-blue" %>
+			</div>-->
+		</div>
+	</div>
+</div>
+
+<%#= render "users/shared/links" %>

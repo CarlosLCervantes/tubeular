@@ -1,0 +1,28 @@
+a.btn:visited, a, a:visited {
+	color:#fff;
+}
+
+body a {
+	color: #ffffff !important;
+}
+
+body a:hover {
+	background-color: rgba(0,0,0,0);
+}
+
+ul.nav a {
+	font-weight: bold;
+}
+
+div.navbar, div.navbar-inner {
+
+	margin: 0;
+	padding: 0;
+	//border-bottom-left-radius: 0px;
+	//border-bottom-right-radius: 0px;
+}
+
+div.navbar-inner {
+	border: 1px solid rgba(0,0,0,.3);
+}
+

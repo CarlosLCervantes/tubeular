@@ -1,0 +1,14 @@
+<div class="content-header row-fluid">
+  <div class="span6">
+    <h2>Your search returned <%= @videos.count %> results</h2>
+  </div>
+  <div class="span6 video-list-filters">
+  </div> 
+</div>
+  <% if @videos && @videos.count > 0 %>
+    <%= render "videos/video_list" %>
+    <%#= paginate @videos %>
+  <% else %>
+
+  <% end %>
+</div>

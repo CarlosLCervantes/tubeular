@@ -1,0 +1,96 @@
+$old-red: rgb(190, 19, 55);
+$red: #B72C1B;
+$blue: #4977CF;
+$real-blue: #4977CF;
+$dark-red: #88011B;
+$dark-grey: #242424;
+$grey: #1F1F1F;
+$text-color: #fff;
+$standard-padding-unit: 15px;
+
+@import "bootstrap_and_overrides";
+@import "forums";
+
+@mixin standard-padding {
+  padding: 0px $standard-padding-unit 0px $standard-padding-unit;
+}
+@mixin heading-font {
+	font-family: 'Oswald', 'Helvetica', 'Arial';
+}
+
+@mixin content-item {
+	background-color: $dark-red;
+	border-radius: 5px;
+}
+
+@import "bourbon";
+@import "bootstrap";
+@import "scaffolds";
+
+@import "welcome";
+@import "videos";
+@import "video-show";
+@import "categories";
+@import "auth";
+@import "suggestions";
+
+@import "shared/nav";
+@import "shared/pagination";
+@import "footer";
+@import "shared/advertising";
+////@import "shared/header";
+
+body {
+	color: $text-color;
+	background-color: #000000;
+}
+
+.clear {
+	clear: both;
+}
+
+.invisible {
+	display: none;
+}
+
+h1, h2, h3, h4, h5 {
+	@include heading-font;
+}
+
+div.text-right {
+	text-align: right;
+}
+
+div#main {
+	margin-top: 10px;
+	border-radius: 5px;
+	//border: 1px solid rgba(25, 25, 25, .5);
+	//box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, .6);
+}
+
+div#main-ad-space {
+	//border: 1px solid $red;
+	min-height: 700px;
+	//width: auto;
+}
+
+div.content-header {
+	
+	border-radius: 4px;
+	margin-bottom: 10px;
+
+	//background-color: $red;
+	// background-image: -moz-linear-gradient(top, $red, $dark-red);
+ //  background-image: -webkit-gradient(linear, left top,left bottom, from(#b032cb), to(#440951));
+ //  background-image: linear-gradient(top, #b032cb, #440951);
+
+	div:first-child {
+		padding-left: $standard-padding-unit;
+	}
+}
+
+/*Errors*/
+div#error_explanation {
+	width: auto;
+	color: #ff0000 !important;
+}

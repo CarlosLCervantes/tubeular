@@ -1,0 +1,19 @@
+div#main-ad-space {
+	text-align:center;
+	//border: 1px solid red;
+}
+
+
+@media (min-width: 1100px) {
+	div.exoclick-video-ad {
+		//border: 3px solid green;
+		margin-left: 27px;
+	}
+}
+
+@media (min-width: 330px) and (max-width: 1000px) {
+	div.exoclick-video-ad {
+		border: 0px solid blue;
+		margin-left: 5px;
+	}
+}

@@ -1,0 +1,13 @@
+<h1>Categories</h1>
+<!-- <div class='row' style="margin-bottom: 15px;"> -->
+<% @categories.each do |category| %>
+  <div class='category-item-container col-lg-3 col-md-4 col-xs-12'>
+    <div class='category-item'>
+      <%= link_to category_path(category) do %>
+        <%= image_tag category.get_image_url %>
+        <h5><%= category.name.upcase %></h5>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<!-- </div> -->

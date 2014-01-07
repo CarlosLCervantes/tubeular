@@ -1,0 +1,21 @@
+div.category-item-container {
+	padding: 5px;
+}
+
+div.category-item {
+	background-color: $red;
+	border: 2px solid #fff;
+	border-radius: 5px;
+	padding: 0px;
+	img {
+		width: 100%;
+	}
+	h5 {
+		text-align: center;
+		background-color: $red;
+		font-size: 16px;
+	}
+	a:hover {
+		text-decoration: none;
+	}
+}

@@ -1,0 +1,32 @@
+<div class="video-list-item-container col-lg-3 col-md-4 col-sm-6 col-xs-12">
+	<div class="video-list-item">
+		<%= link_to video do %>
+			<!--<div class="preview"></div>-->
+				<%= get_screenshot video %>
+		<% end %>
+		<div class="info">
+			<p clas='title'>
+				<strong><%= link_to video.name, videos_path %></strong>
+			</p>
+			<div class="row info-row">
+				<div class="col-xs-6">
+					<%= video.length %>
+				</div>
+				<div class="col-xs-6 ratings-container">
+					<%= ratings(video) %>
+				</div>
+			</div>
+			<div class="row info-row">
+				<div class="col-xs-6">
+					<%#= video.posted_at %>
+					<%= distance_of_time_in_words_to_now(video.created_at) %> ago
+				</div>
+				<div class="col-xs-6">
+					<%= video.view_count || 0 %> <span class="glyphicon glyphicon-eye-open"></span>
+				</div>
+			</div>
+			<!-- <br class="clear" /> -->
+		</div>
+
+	</div>
+</div>

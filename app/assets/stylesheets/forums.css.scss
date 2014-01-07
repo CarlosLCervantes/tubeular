@@ -1,0 +1,19 @@
+@import "forem/bootstrap/forums";
+@import "forem/bootstrap/posts";
+@import "forem/bootstrap/topics";
+
+table#forums, table.topics {
+	//background-color: #000000 !important;
+	thead th {
+		background-color: $dark-red;
+	}
+	tbody {
+		background-color: #000000 !important;
+		tr, td, tr.topic {
+			background-color: #000000 !important;
+		}
+		tr {
+			border: 1px solid #ffffff;
+		}
+	}
+}
