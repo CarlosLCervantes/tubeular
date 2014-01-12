@@ -53,108 +53,40 @@ describe SuggestionsController do
     end
   end
 
-  describe "GET edit" do
-    it "assigns the requested suggestion as @suggestion" do
-      suggestion = Suggestion.create! valid_attributes
-      get :edit, {:id => suggestion.to_param}, valid_session
-      assigns(:suggestion).should eq(suggestion)
-    end
-  end
+  # describe "POST create" do
+  #   describe "with valid params" do
+  #     it "creates a new Suggestion" do
+  #       expect {
+  #         post :create, {:suggestion => valid_attributes}, valid_session
+  #       }.to change(Suggestion, :count).by(1)
+  #     end
 
-  describe "POST create" do
-    describe "with valid params" do
-      it "creates a new Suggestion" do
-        expect {
-          post :create, {:suggestion => valid_attributes}, valid_session
-        }.to change(Suggestion, :count).by(1)
-      end
+  #     it "assigns a newly created suggestion as @suggestion" do
+  #       post :create, {:suggestion => valid_attributes}, valid_session
+  #       assigns(:suggestion).should be_a(Suggestion)
+  #       assigns(:suggestion).should be_persisted
+  #     end
 
-      it "assigns a newly created suggestion as @suggestion" do
-        post :create, {:suggestion => valid_attributes}, valid_session
-        assigns(:suggestion).should be_a(Suggestion)
-        assigns(:suggestion).should be_persisted
-      end
+  #     it "redirects to the created suggestion" do
+  #       post :create, {:suggestion => valid_attributes}, valid_session
+  #       response.should redirect_to(Suggestion.last)
+  #     end
+  #   end
 
-      it "redirects to the created suggestion" do
-        post :create, {:suggestion => valid_attributes}, valid_session
-        response.should redirect_to(Suggestion.last)
-      end
-    end
+  #   describe "with invalid params" do
+  #     it "assigns a newly created but unsaved suggestion as @suggestion" do
+  #       # Trigger the behavior that occurs when invalid params are submitted
+  #       Suggestion.any_instance.stub(:save).and_return(false)
+  #       post :create, {:suggestion => { "title" => "invalid value" }}, valid_session
+  #       assigns(:suggestion).should be_a_new(Suggestion)
+  #     end
 
-    describe "with invalid params" do
-      it "assigns a newly created but unsaved suggestion as @suggestion" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        Suggestion.any_instance.stub(:save).and_return(false)
-        post :create, {:suggestion => { "title" => "invalid value" }}, valid_session
-        assigns(:suggestion).should be_a_new(Suggestion)
-      end
-
-      it "re-renders the 'new' template" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        Suggestion.any_instance.stub(:save).and_return(false)
-        post :create, {:suggestion => { "title" => "invalid value" }}, valid_session
-        response.should render_template("new")
-      end
-    end
-  end
-
-  describe "PUT update" do
-    describe "with valid params" do
-      it "updates the requested suggestion" do
-        suggestion = Suggestion.create! valid_attributes
-        # Assuming there are no other suggestions in the database, this
-        # specifies that the Suggestion created on the previous line
-        # receives the :update_attributes message with whatever params are
-        # submitted in the request.
-        Suggestion.any_instance.should_receive(:update).with({ "title" => "MyString" })
-        put :update, {:id => suggestion.to_param, :suggestion => { "title" => "MyString" }}, valid_session
-      end
-
-      it "assigns the requested suggestion as @suggestion" do
-        suggestion = Suggestion.create! valid_attributes
-        put :update, {:id => suggestion.to_param, :suggestion => valid_attributes}, valid_session
-        assigns(:suggestion).should eq(suggestion)
-      end
-
-      it "redirects to the suggestion" do
-        suggestion = Suggestion.create! valid_attributes
-        put :update, {:id => suggestion.to_param, :suggestion => valid_attributes}, valid_session
-        response.should redirect_to(suggestion)
-      end
-    end
-
-    describe "with invalid params" do
-      it "assigns the suggestion as @suggestion" do
-        suggestion = Suggestion.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
-        Suggestion.any_instance.stub(:save).and_return(false)
-        put :update, {:id => suggestion.to_param, :suggestion => { "title" => "invalid value" }}, valid_session
-        assigns(:suggestion).should eq(suggestion)
-      end
-
-      it "re-renders the 'edit' template" do
-        suggestion = Suggestion.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
-        Suggestion.any_instance.stub(:save).and_return(false)
-        put :update, {:id => suggestion.to_param, :suggestion => { "title" => "invalid value" }}, valid_session
-        response.should render_template("edit")
-      end
-    end
-  end
-
-  describe "DELETE destroy" do
-    it "destroys the requested suggestion" do
-      suggestion = Suggestion.create! valid_attributes
-      expect {
-        delete :destroy, {:id => suggestion.to_param}, valid_session
-      }.to change(Suggestion, :count).by(-1)
-    end
-
-    it "redirects to the suggestions list" do
-      suggestion = Suggestion.create! valid_attributes
-      delete :destroy, {:id => suggestion.to_param}, valid_session
-      response.should redirect_to(suggestions_url)
-    end
-  end
-
+  #     it "re-renders the 'new' template" do
+  #       # Trigger the behavior that occurs when invalid params are submitted
+  #       Suggestion.any_instance.stub(:save).and_return(false)
+  #       post :create, {:suggestion => { "title" => "invalid value" }}, valid_session
+  #       response.should render_template("new")
+  #     end
+  #   end
+  # end
 end

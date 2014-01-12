@@ -58,9 +58,9 @@ describe VideosController do
   describe "GET most_viewed" do
     it "assigns most viewed videos as @videos" do
       setup_videos
-      videos = Video.order(view_count: :asc).limit(@page_size).all
+      videos = Video.order(view_count: :desc).limit(@page_size).to_a
       get :most_viewed, {}, valid_session
-      #videos = videos.order(view_count: :asc).limit(@page_size)
+      #videos = videos.order(view_count: :desc).limit(@page_size)
       assigns(:videos).should eq(videos)
     end
   end
@@ -68,7 +68,7 @@ describe VideosController do
   describe "GET most_favorited" do
     it "assigns most favorited videos as @videos" do
       setup_videos
-      videos = Video.order(favorite_count: :asc).limit(@page_size).all
+      videos = Video.order(favorite_count: :desc).limit(@page_size).to_a
       get :most_viewed, {}, valid_session
       #videos = videos.order(view_count: :asc).limit(@page_size)
       assigns(:videos).should eq(videos)
@@ -78,7 +78,7 @@ describe VideosController do
   describe "GET best_rated" do
     it "assigns best rated videos as @videos" do
       setup_videos
-      videos = Video.order(rating: :asc).limit(@page_size).all
+      videos = Video.order(rating: :desc).limit(@page_size).to_a
       get :most_viewed, {}, valid_session
       #videos = videos.order(view_count: :asc).limit(@page_size)
       assigns(:videos).should eq(videos)
