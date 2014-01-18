@@ -28,7 +28,7 @@ class VideosController < ApplicationController
   def show
     @video = Video.find(params[:id])
     @video.mark_watched
-    @videos = Video.where(category_id:@video.category_id).limit(4)
+    @videos = Video.where("category_id = ? AND id != ?", @video.category_id, @video.id).limit(4)
   end
 
   def search
